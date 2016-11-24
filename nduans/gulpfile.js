@@ -53,5 +53,5 @@ gulp.task('browserSync', ['runserver'], function() {
 gulp.task('watch', ['browserSync', 'styles'], function() {
   gulp.watch('./static/scss/**/*.scss', ['styles']);
   gulp.watch('./static/js/**/*.js', browserSync.reload);
-  gulp.watch('./templates/**/*.html', browserSync.reload);
+  gulp.watch('./templates/**/*.html').on('change', browserSync.reload);
 });

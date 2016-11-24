@@ -1,14 +1,4 @@
-$color1: #f2f2f2;
-
-body {
-  margin: 1px;
-  padding: 0;
-}
-
-p {
-  margin-bottom: 10px;
-  a {
-    text-decoration: none;
-    color: $color1;
-  }
-}
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+@import 'ed-grid';

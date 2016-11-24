@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>hola {{ portada }} muy buenos</h1>
-</body>
-</html>
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <main>
+    <div class="banner">
+      <img src="{% static 'img/banner.jpg' %}" alt="" class="banner__img">
+      <div class="ed-container banner__form-search">
+        <div class="ed-item">
+            <form action="#" method="get" class="form-search">
+              <input class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
+              <button class="btn-search" type="submit" name="search">Buscar</button>
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

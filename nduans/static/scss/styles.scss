@@ -1,0 +1,143 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+
+// ed-grid import
+@import 'ed-grid';
+@import 'config-styles';
+
+// local import
+
+@import 'components/style/banner';
+@import 'components/style/form-search';
+
+
+body {
+  background-color: map-get($colors, white);
+  font-family: $font-text;
+}
+
+.main-header {
+  background-color: map-get($colors, dark-blue);
+  height: $hight-menu;
+}
+
+.logo {
+  line-height: $hight-menu;
+}
+
+// icono para emostrar las tres barras
+.nav-trigger {
+  @include showTo(m);
+  display: flex;
+  align-items: center;
+  height: $hight-menu;
+  font-weight: $regular;
+  color: map-get($colors, white);
+  text-transform: uppercase;
+  border-left: 1px solid rgba(map-get($colors, gray2), .4);
+  padding: 0 0 0 $gutter;
+  font-size: 0.75em;
+  float: right;
+
+  &:hover{
+    text-decoration: none;
+  }
+
+  span {
+  }
+
+  em, em::before, em::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: map-get($colors, white);
+    backface-visibility: hidden;
+  }
+
+  em {
+    position: relative;
+    margin: 8px auto 8px;
+  }
+
+  em::before, em::after {
+    content: "";
+    position: absolute;
+  }
+
+  em:before {
+    transform: translateY(-6px);
+  }
+  em::after {
+    transform: translateY(6px);
+  }
+}
+
+// menu de navegacion
+.main-nav {
+  width: 80%;
+  height: 100%;
+  background-color: map-get($colors, gray1);
+  position: fixed;
+  top: $hight-menu;
+  right: 0;
+  z-index: $nav-zindex * 5;
+  @include from(m) {
+    position: relative;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: $hight-menu;
+    background-color: inherit;
+    justify-content: flex-end;
+  }
+}
+
+.main-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include from(m) {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    padding: .7em $gutter;
+    border-bottom: 1px solid rgba(map-get($colors, medium-blue), .2);
+    @include from(m) {
+      padding: 0 .5em;
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: .3em .2em;
+    &:hover {
+      text-decoration: none;
+    }
+    @include from(m) {
+      color: map-get($colors, white);
+      &:hover {
+
+        &::before {
+          transition: opacity 1s;
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: map-get($colors, medium-blue);
+        opacity: 0;
+      }
+    }
+  }
+}

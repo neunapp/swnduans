@@ -1,0 +1,36 @@
+.banner {
+  $color1: map-get($colors, dark-blue);
+  $color2: map-get($colors, light-blue);
+
+  position: relative;
+  z-index: 100;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: linear-gradient($color2,$color1);
+    background-color: red;
+  }
+
+  &__img {
+    width: 100%;
+    @include from(m) {
+      height: 88vh;
+    }
+  }
+
+  &__form-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    text-align: center;
+    z-index: 200;
+
+  }
+}

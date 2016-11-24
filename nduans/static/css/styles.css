@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Trirong");
 *,
 *:before,
 *:after {
@@ -224,7 +225,7 @@ textarea {
   padding-right: 0;
 }
 
-.button {
+.button, .form-search .btn-search {
   display: inline-block;
   line-height: 2.5em;
   padding: 0 1.5em;
@@ -968,4 +969,223 @@ body.sticky-footer > footer {
 .button:active {
   -ms-transform: scale(0.97);
       transform: scale(0.97);
+}
+
+.banner {
+  position: relative;
+  z-index: 100;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: linear-gradient(#699fc3, #0b2e4e);
+  background-color: red;
+}
+
+.banner__img {
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .banner__img {
+    height: 88vh;
+  }
+}
+
+.banner__form-search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  width: 95%;
+  text-align: center;
+  z-index: 200;
+}
+
+.form-search {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.form-search .input-search {
+  border: none;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  padding-left: 0.9375em;
+  opacity: .9;
+}
+
+.form-search .btn-search {
+  background: #699fc3;
+  color: #fff;
+  border-left: 0;
+  margin: 0;
+}
+
+.form-search .btn-search:hover {
+  background: #5793bc;
+  text-decoration: none;
+}
+
+.form-search .btn-search:active {
+  -ms-transform: scale(0.97);
+      transform: scale(0.97);
+}
+
+body {
+  background-color: #fdfdfd;
+  font-family: "Lato", sans-serif;
+}
+
+.main-header {
+  background-color: #0b2e4e;
+  height: 70px;
+}
+
+.logo {
+  line-height: 70px;
+}
+
+.nav-trigger {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 70px;
+  font-weight: 400;
+  color: #fdfdfd;
+  text-transform: uppercase;
+  border-left: 1px solid rgba(230, 230, 230, 0.4);
+  padding: 0 0 0 0.9375em;
+  font-size: 0.75em;
+  float: right;
+}
+
+@media screen and (min-width: 640px) {
+  .nav-trigger {
+    display: none;
+  }
+}
+
+.nav-trigger:hover {
+  text-decoration: none;
+}
+
+.nav-trigger em, .nav-trigger em::before, .nav-trigger em::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fdfdfd;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.nav-trigger em {
+  position: relative;
+  margin: 8px auto 8px;
+}
+
+.nav-trigger em::before, .nav-trigger em::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-trigger em:before {
+  -ms-transform: translateY(-6px);
+      transform: translateY(-6px);
+}
+
+.nav-trigger em::after {
+  -ms-transform: translateY(6px);
+      transform: translateY(6px);
+}
+
+.main-nav {
+  width: 80%;
+  height: 100%;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  z-index: 375;
+}
+
+@media screen and (min-width: 640px) {
+  .main-nav {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: inherit;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+  }
+}
+
+.main-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 640px) {
+  .main-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+}
+
+.main-menu__item {
+  padding: 0.7em 0.9375em;
+  border-bottom: 1px solid rgba(33, 100, 152, 0.2);
+}
+
+@media screen and (min-width: 640px) {
+  .main-menu__item {
+    padding: 0 .5em;
+    border-bottom: none;
+  }
+}
+
+.main-menu__link {
+  display: block;
+  position: relative;
+  padding: .3em .2em;
+}
+
+.main-menu__link:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 640px) {
+  .main-menu__link {
+    color: #fdfdfd;
+  }
+  .main-menu__link:hover::before {
+    transition: opacity 1s;
+    opacity: 1;
+  }
+  .main-menu__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #216498;
+    opacity: 0;
+  }
 }

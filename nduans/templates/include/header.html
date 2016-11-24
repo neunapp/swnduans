@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<header class="main-header">
+  <div class="ed-container">
+
+    <div class="ed-item s-30 logo">
+      <a href="#">
+        <img src="{% static 'img/cd-logo.svg'%}" alt="logo">
+      </a>
+    </div>
+
+    <div class="ed-item s-70">
+
+      <a href="#cd-navigation" class="nav-trigger">
+			<span>
+				<em aria-hidden="true" class="menu-bar"></em>
+				Menu
+			</span>
+		  </a> <!-- .nav-trigger -->
+
+      <nav class="main-nav">
+        <ul class="main-menu">
+          <li class="main-menu__item">
+            <a href="#" class="main-menu__link">home</a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#" class="main-menu__link">contactenos</a>
+          </li>
+          <li class="main-menu__item">
+            <a href="#" class="main-menu__link">entrar</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

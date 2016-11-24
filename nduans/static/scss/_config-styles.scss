@@ -1,0 +1,26 @@
+// paleta de colores de la pagina principal
+$colors: (
+dark-blue: #0b2e4e,
+medium-blue: #216498,
+light-blue: #699fc3,
+white: #fdfdfd,
+black: #111,
+gray1: #f1f1f1,
+gray2: #e6e6e6
+);
+
+// funetas para titulos y parrafos
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Trirong');
+$font-title: 'Trirong', serif;
+$font-text: 'Lato', sans-serif;
+
+// tamaño de la fuentes
+$light: 300;
+$regular: 400;
+
+// Tamaño del menu
+$hight-menu: 70px;
+
+// z-index de elemoentos
+$header-zindex: 100;
+$nav-zindex: 75;
