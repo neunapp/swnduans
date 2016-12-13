@@ -1,0 +1,18 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+    <h3>
+      Su peticion a sido aceptada, pronto recibira un url de confirmacion en su buzon de correo elctronico
+    </h3>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

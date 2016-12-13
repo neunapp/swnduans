@@ -1,0 +1,47 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <div ng-app="DuansApp" ng-controller="TemaListCtrl as self">
+    <main ng-show="!self.busqueda">
+      <div class="banner">
+        <img src="{% static 'img/banner.jpg' %}" alt="" class="banner__img">
+        <div class="ed-container banner__form-search">
+          <div class="ed-item">
+              <form action="#" method="get" class="form-search">
+                <input ng-model="self.buscar" ng-change="self.resultados_busqueda()" class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
+                <button  class="btn-search" type="submit" name="search">Buscar</button>
+              </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Buscador -->
+    <div class="row" ng-show="self.busqueda">
+      <input ng-focus="self.busqueda" ng-model="self.buscar" ng-change="self.resultados_busqueda()" class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
+      <div class="col-md-6">
+        <div ng-repeat="tema in self.temas">
+          <p><a href="/{$tema.category$}/{$tema.slug$}">{$ tema.title $}</a></p>
+          <p>{$ tema.content $}</p>
+          <p>{$ tema.slug $}</p>
+          <legend>----------------------------</legend>
+        </div>
+      </div>
+      <div class="col-md-6">
+        ----------------------Preguntas mas Buscadas----------------------
+      </div>
+    </div>
+
+  </div>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

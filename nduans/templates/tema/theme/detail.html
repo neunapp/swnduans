@@ -1,0 +1,31 @@
+{% extends "tema/base_tema.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <div>
+    <p>
+      <h2>{{theme.title}}</h2>
+      {{theme.specialist}}
+    </p>
+    <p>
+      <h4>{{theme.description}}</h4>
+      {{theme.content}}
+    </p>
+    {{theme.date_public}}
+  </div>
+  <br>
+  <div ng-app="DuansApp" ng-controller="CalificarTemaCtrl as self">
+    <div class="row">
+      {{promedio}}<button type="button" name="button" ng-click="self.calificar_tema({{theme.pk}})">Calificar</button>
+    </div>
+  </div>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

@@ -90,3 +90,25 @@ ENV/
 
 # node_modules
 nduans/node_modules/
+
+#Secrect json
+
+nduans/secrets.json
+
+nduans/manage.py
+
+nduans/nduans/wsgi.py
+
+nduans/media/*
+
+nduans/applications/users/migrations/*
+
+nduans/applications/tema/migrations/*
+
+nduans/applications/pregunta/migrations/*
+
+nduans/applications/miscelanea/migrations/*
+
+nduans/applications/calificacion/migrations/*
+
+nduans/applications/home/migrations/*

@@ -8,19 +8,23 @@
 
 {% block js %}
   <script src="{% static 'js/scripts.js' %}"></script>
-  
   <!-- archivos angularjs -->
   <script src="{% static 'js/vendor/jquery.js' %}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
   <script src="{% static 'js/angularjs/angular-cookies.js' %}"></script>
 
+  <!-- Libreria de Terceros -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY-HZtj2t8617Gh_1NzzdTIK6TWCbLuss&libraries=places"></script>
+  <script src="{% static 'js/angularjs/diretivas/vs-google-autocomplete.js' %}"></script>
+
   <!-- controladores base -->
   <script src="{% static 'angularApp/common/common.services.js' %}"></script>
   <script src="{% static 'angularApp/app.js' %}"></script>
 
-  <!-- Controladores para Servicios-->
+  <!-- Controladores para servicios de aplicacion calificacion-->
   <script src="{% static 'angularApp/common/services/tema/tema.services.js' %}"></script>
-
-    <!-- Controladores de la aplicacion-->
-  <script src="{% static 'angularApp/app/tema/tema_listCtrl.js' %}"></script>
+  <script src="{% static 'angularApp/common/services/calificacion/calificacion.services.js' %}"></script>
+    <!-- Controladores para aplicacion calificacion-->
+    <script src="{% static 'angularApp/app/calificacion/calificar_tema.js' %}"></script>
+    <script src="{% static 'angularApp/app/tema/especialista/especialista_addCtrl.js' %}"></script>
 {% endblock js %}

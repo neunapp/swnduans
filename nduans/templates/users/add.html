@@ -1,0 +1,19 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+    <form method="post" class="login-form mt-lg">{% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" class="btn btn-inverse btn-sm">Registrar</button>
+    </form>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

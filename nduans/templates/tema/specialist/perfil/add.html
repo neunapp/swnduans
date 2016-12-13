@@ -1,0 +1,75 @@
+{% extends "tema/base_tema.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <br>
+  <div ng-app="DuansApp" ng-controller="AddEspecialistaCtrl as self">
+    <div class="row">
+      <div class="container">
+    <legend> Datos de Usuarios</legend>
+    <div class="row">
+      <label for="">E-mail:</label>
+      <input ng-model="self.usuario.email" type="text" placeholder="correo electronico">
+    </div>
+    <div class="row">
+      <label for="">Nombre y Apellidos:</label>
+      <input ng-model="self.usuario.first_name" type="text" placeholder="nombres">
+      <input ng-model="self.usuario.last_name" type="text" placeholder="apellidos">
+    </div>
+    <div class="row">
+      <label for="">Telefono:</label>
+      <input ng-model="self.usuario.phone" type="text" placeholder="telefono-celular">
+    </div>
+    <div class="row">
+      <label for="">Sexo:</label>
+      <select ng-model="self.usuario.gender" class="form-control">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="">Fecha de nacimiento:</label>
+      <input ng-model="self.date_birth"type="text" name="name">
+    </div>
+    <div class="row">
+      <label for="">Especialidad:</label>
+      <input ng-model="self.specialty"type="text" name="name">
+    </div>
+    <div class="row">
+      <label for="">Descripcion:</label>
+      <textarea ng-model="self.description" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="row">
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Direccion Laboral</span>
+        <input vs-google-autocomplete
+            ng-model="self.address.name"
+            vs-place-id="self.address.components.placeId"
+            vs-street="self.address.components.street"
+            vs-city="self.address.components.city"
+            vs-state="self.address.components.state"
+            vs-country-short="self.address.components.countryCode"
+            vs-country="self.address.components.country"
+            vs-district="self.address.components.district"
+
+          type="text" class="form-control" placeholder="cusco wanchaq estadio el hueco" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div class="btn-group" role="group">
+      <button ng-click="self.crear_especialista()" type="button" class="btn btn-success">Registrar mi perfil</button>
+    </div>
+    <br>
+    <legend></legend>
+  </div>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

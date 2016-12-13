@@ -29,11 +29,17 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
+    'applications.users',
     'applications.home',
     'applications.miscelanea',
+    'applications.tema',
+    'applications.calificacion',
+    'applications.pregunta',
 )
 
 THIRD_PARTY_APPS = (
+    'rest_framework',
+    'social.apps.django_app.default',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -61,12 +67,33 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # Python Social Auth Context Processors
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'nduans.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+    # Facebook
+    'social.backends.facebook.FacebookOAuth2',
+    # Django
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+SOCIAL_AUTH_FACEBOOK_KEY = get_secret('FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = get_secret('FACEBOOK_SECRET')
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
+
+#variable urls social auth
+# LOGIN_URL = 'login'
+# LOGOUT_URL = 'logout'
+# LOGIN_REDIRECT_URL = 'index'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -83,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
 
 LANGUAGE_CODE = 'es-pe'
 

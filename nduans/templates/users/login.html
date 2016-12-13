@@ -1,0 +1,40 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+    {% if user and not user.is_anonymous %}
+      Bienvenido {{ user.get_full_name }}
+      <a href="{% url 'users_app:logout' %}">salir</a>
+
+    {% else %}
+    <form method="post" class="login-form mt-lg">{% csrf_token %}
+      {{form}}
+      <button type="submit" class="btn btn-inverse btn-sm">Ingresar</button>
+    </form>
+      <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">
+        Acceder con facebook
+      </a>
+      <p>
+
+      </p>
+      <a href="{% url 'users_app:registro' %}">
+        Registro
+      </a>
+      <p>
+        <a href="{% url 'tema_app:especialista-add' %}">
+          Unete a nuestro equipo de profesionales
+        </a>
+      </p>
+
+    {% endif %}
+
+  {% include "include/footer.html" %}
+
+{% endblock %}
