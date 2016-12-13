@@ -1,0 +1,20 @@
+$height-social: 32px;
+.social {
+  padding-top: .4em;
+  color: #fff;
+  display: flex;
+}
+
+@each $red, $color in $colors-social {
+  .social--#{$red} {
+    color: white;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin-left: .4em;
+    background-color: $color;
+    text-align: center;
+    line-height: $height-social;
+    padding: 0 .5em;
+  }
+}

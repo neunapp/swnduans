@@ -6,7 +6,16 @@ $devMode: false;
 @import 'ed-grid';
 @import 'config-styles';
 
-// local import
+// local element import
+
+@import 'element/input';
+
+// local collections import
+
+@import 'collections/forms';
+@import 'collections/questions';
+@import 'collections/ranking';
+@import 'collections/social';
 
 @import 'components/style/banner';
 @import 'components/style/form-search';
@@ -15,6 +24,17 @@ $devMode: false;
 body {
   background-color: map-get($colors, white);
   font-family: $font-text;
+  font-weight: $regular;
+  color: darken(map-get($colors, gray2), 50);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  color: map-get($colors, black);
 }
 
 .main-header {
@@ -80,7 +100,7 @@ body {
   background-color: map-get($colors, gray1);
   position: fixed;
   top: $hight-menu;
-  right: 0;
+  right: -80%;
   z-index: $nav-zindex * 5;
   @include from(m) {
     position: relative;
