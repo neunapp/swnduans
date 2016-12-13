@@ -9,3 +9,4 @@ class IndexView(TemplateView):
     vista para la pagina de inicio
     '''
     template_name = 'home/home2.html'
+    

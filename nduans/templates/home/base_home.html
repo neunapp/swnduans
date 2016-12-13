@@ -7,12 +7,12 @@
 {% endblock css %}
 
 {% block js %}
-  <script src="{% static 'js/scripts.js' %}"></script>
-  
+
   <!-- archivos angularjs -->
   <script src="{% static 'js/vendor/jquery.js' %}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+  <script src="{% static 'js/angularjs/angular.min.js' %}"></script>
   <script src="{% static 'js/angularjs/angular-cookies.js' %}"></script>
+  <script src="{% static 'js/angularjs/diretivas/vs-google-autocomplete.js' %}"></script>
 
   <!-- controladores base -->
   <script src="{% static 'angularApp/common/common.services.js' %}"></script>
@@ -23,4 +23,6 @@
 
     <!-- Controladores de la aplicacion-->
   <script src="{% static 'angularApp/app/tema/tema_listCtrl.js' %}"></script>
+
+  <script src="{% static 'js/scripts.js' %}"></script>
 {% endblock js %}
