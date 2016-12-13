@@ -1,12 +1,19 @@
 // paleta de colores de la pagina principal
 $colors: (
-dark-blue: #0b2e4e,
-medium-blue: #216498,
-light-blue: #699fc3,
-white: #fdfdfd,
-black: #111,
-gray1: #f1f1f1,
-gray2: #e6e6e6
+  dark-blue: #0b2e4e,
+  medium-blue: #216498,
+  light-blue: #699fc3,
+  white: #fff,
+  black: #111,
+  gray1: #f1f1f1,
+  gray2: #e6e6e6,
+  yellow: #ffdd36
+);
+
+$colors-social: (
+  facebook: #3b5998,
+  twitter: #00aced,
+  googleplus: #dd4b39
 );
 
 // funetas para titulos y parrafos

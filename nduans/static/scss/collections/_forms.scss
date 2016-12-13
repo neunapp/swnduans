@@ -1,0 +1,6 @@
+.search-container {
+  $bg-color: map-get($colors, gray2);
+  margin: $gutter 0;
+  padding: ($gutter * 2) $gutter;
+  background-color: $bg-color;
+}

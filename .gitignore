@@ -90,3 +90,7 @@ ENV/
 
 # node_modules
 nduans/node_modules/
+
+# json
+
+nduans/secrets.json

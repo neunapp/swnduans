@@ -8,7 +8,7 @@ class IndexView(TemplateView):
     '''
     vista para la pagina de inicio
     '''
-    template_name = 'home/index.html'
+    template_name = 'tema/theme/detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
