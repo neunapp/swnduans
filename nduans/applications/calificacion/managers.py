@@ -1,7 +1,7 @@
 #datetime import
 from datetime import datetime
 
-#django function
+#functions django models
 from django.db.models import Avg
 
 #django import
@@ -17,3 +17,19 @@ class ThemeRatingManager(models.Manager):
         return self.filter(
             theme__pk=theme_pk,
         ).aggregate(promedio=Avg('point'))
+
+
+class SpecialistRatingManager(models.Manager):
+    """procedimientos para tabla calificacion especialistas"""
+
+    def top_7_specialist(self):
+        return self.filter(
+            specialist__user__is_active=True,
+        ).values(
+            'specialist__pk',
+            'specialist__user__first_name',
+            'specialist__user__last_name',
+            'specialist__user__avatar',
+        ).annotate(
+            promedio=Avg('point')
+        )[:7]

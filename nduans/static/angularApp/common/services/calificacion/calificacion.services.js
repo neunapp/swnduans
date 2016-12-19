@@ -18,6 +18,11 @@
                 });
           }
 
+          //servicio que recupera top especialistas
+          self.top_7_specialist = function(){
+            return  $http.get("/api/califiacion/top/");
+          }
+
           return self;
         }
 }());

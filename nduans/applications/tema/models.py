@@ -19,7 +19,7 @@ from applications.miscelanea.models import (
 )
 
 #import managers
-from .managers import ThemeManager
+from .managers import ThemeManager, SpecialistManager
 
 
 @python_2_unicode_compatible
@@ -40,6 +40,8 @@ class Specialist(TimeStampedModel):
         null=True
     )
     description = models.TextField(blank=True)
+
+    objects = SpecialistManager()
 
     class Meta:
         verbose_name = 'Especialista'

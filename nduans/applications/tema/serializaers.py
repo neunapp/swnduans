@@ -13,6 +13,7 @@ class ThemeListSerializer(serializers.ModelSerializer):
 
     category = serializers.CharField(source='category.name')
     specialist = serializers.CharField(source='specialist.user.first_name')
+    specialist_image = serializers.ImageField(source='specialist.user.avatar')
 
     class Meta:
         model = Theme
@@ -25,6 +26,7 @@ class ThemeListSerializer(serializers.ModelSerializer):
             'date_public',
             'specialist',
             'slug',
+            'specialist_image'
         )
 
 

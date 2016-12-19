@@ -13,7 +13,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from applications.tema.models import Theme, Specialist
 
 #importamos Manager
-from .managers import ThemeRatingManager
+from .managers import ThemeRatingManager, SpecialistRatingManager
 
 
 @python_2_unicode_compatible
@@ -48,6 +48,8 @@ class SpecialistRating(TimeStampedModel):
         related_name='usuario_normal'
     )
     point = models.PositiveIntegerField()
+
+    objects = SpecialistRatingManager()
 
     class Meta:
         verbose_name = 'Calificacion Especialista'

@@ -8,20 +8,74 @@
 
 {% block content %}
   {% include "include/header.html" %}
-  <main>
-    <div class="banner">
-      <img src="{% static 'img/banner.jpg' %}" alt="" class="banner__img">
-      <div class="ed-container banner__form-search">
-        <div class="ed-item">
+  <div ng-app="DuansApp" ng-controller="TemaListCtrl as self">
+    <main ng-show="!self.busqueda">
+      <div class="banner">
+        <img src="{% static 'img/banner.jpg' %}" alt="" class="banner__img">
+        <div class="ed-container banner__form-search">
+          <div class="ed-item">
             <form action="#" method="get" class="form-search">
-              <input class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
+              <input ng-model="self.buscar" ng-change="self.resultados_busqueda()" class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
               <button class="btn-search" type="submit" name="search">Buscar</button>
             </form>
+          </div>
         </div>
+      </div>
+    </main>
+
+    <!-- Lista de Elemntos de Busqueda -->
+    <main class="main" ng-show="self.busqueda">
+      <div class="ed-container">
+        <div class="ed-item s-100">
+          <div class="search-container">
+            <form action="#" method="get" class="form-search">
+              <input ng-model="self.buscar" ng-change="self.resultados_busqueda()" class="input-search" type="text" name="name" placeholder="Introduce tu pregunta" id="search">
+              <button class="btn-search" type="submit" name="search">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </div><!-- fin de formulario buscador -->
+
+      <div class="ed-container">
+        <div class="ed-item s-100 m-75 answers">
+          <div class="answer" ng-repeat="tema in self.temas">
+            <div class="answer__img">
+              <img src="{$ tema.specialist_image $}" alt="">
+            </div>
+            <div class="answer__content">
+              <span class="answer__date">{$ tema.date_public $}</span>
+              <h2 class="answer__title"> <a href="/{$tema.category$}/{$tema.slug$}">{$ tema.title $}</a></h2>
+              <p class="answer__description">
+                {$ tema.content $}
+              </p>
+            </div>
+          </div>
+
+        </div> <!-- fin de contenedor respuestas-->
+
+        <div class="ed-item s-100 m-25 ranking" ng-init="self.lista_especilistas()">
+
+          <h3 class="ranking__title">Especialistas</h3>
+
+          <div class="ranking-item" ng-repeat="e in self.especialistas">
+
+            <span class="ranking-item__point">{$ e.promedio $}</span>
+            <div class="ranking-item__img">
+              <img src="/media/users/contacto.jpg" alt="">
+            </div>
+            <div class="ranking-item__name">{$ e.specialist__user__first_name $} {$ e.specialist__user__last_name $}</div>
+            <div class="ranking-item__profession">ing. Mecanico</div>
+
+            <a class="ranking-item__link" href="#">visitar</a>
+          </div>
+
+        </div> <!-- fin de lista de mejores espcialistas -->
+
 
       </div>
-    </div>
-  </main>
+
+    </main>
+  </div>
 
   {% include "include/footer.html" %}
 

@@ -16,3 +16,10 @@ class ThemeManager(models.Manager):
             publicado=True,
             title__icontains=kword,
         ).order_by('-created')
+
+
+class SpecialistManager(models.Manager):
+    """Procedimientos Para Tabla Especialistas"""
+
+    def list(self):
+        return self.all()
