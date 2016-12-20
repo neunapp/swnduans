@@ -17,14 +17,16 @@
   <!-- controladores base -->
   <script src="{% static 'angularApp/common/common.services.js' %}"></script>
   <script src="{% static 'angularApp/app.js' %}"></script>
+  <script src="{% static 'js/angularjs/diretivas/ng-editor/angular-file-upload.min.js' %}"></script>
+  <script src="{% static 'js/angularjs/diretivas/ng-editor/ngEditor.js' %}"></script>
 
   <!-- Controladores para Servicios-->
   <script src="{% static 'angularApp/common/services/tema/tema.services.js' %}"></script>
   <script src="{% static 'angularApp/common/services/calificacion/calificacion.services.js' %}"></script>
-  
+
 
     <!-- Controladores de la aplicacion-->
-  <script src="{% static 'angularApp/app/tema/tema_listCtrl.js' %}"></script>
+  <script src="{% static 'angularApp/app/tema/theme/tema_listCtrl.js' %}"></script>
 
   <script src="{% static 'js/scripts.js' %}"></script>
 {% endblock js %}

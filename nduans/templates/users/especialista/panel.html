@@ -1,0 +1,23 @@
+{% extends "users/base_users.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Panel Especialista
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+    <ul>
+      <li>Perfil</li>
+      <li><a href="{% url 'tema_app:theme-list' %}">Redecatar</a></li>
+      <li>Buzon</li>
+      <li>Borrador</li>
+      <li>Estadisticas</li>
+      <li>Papelera</li>
+    </ul>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

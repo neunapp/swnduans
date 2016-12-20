@@ -46,7 +46,7 @@
               <span class="answer__date">{$ tema.date_public $}</span>
               <h2 class="answer__title"> <a href="/{$tema.category$}/{$tema.slug$}">{$ tema.title $}</a></h2>
               <p class="answer__description">
-                {$ tema.content $}
+                {$ tema.content|htmlToPlaintext $}
               </p>
             </div>
           </div>

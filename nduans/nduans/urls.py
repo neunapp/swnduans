@@ -6,9 +6,10 @@ from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-
     #
+    #
+    url(r'^admin/', admin.site.urls),
+    
     # Python Social Auth URLs
     url('', include('social.apps.django_app.urls', namespace='social')),
 

@@ -1,7 +1,12 @@
 from rest_framework import serializers
 
 #sserilizdor de otras aplicaciones
-from applications.miscelanea.serializers import LocationSerializer
+from applications.miscelanea.serializers import (
+    LocationSerializer,
+    CategorySerializer,
+    KeyWordsSerializer,
+)
+
 from applications.users.serializers import UserSerializer
 
 from .models import Theme, Specialist
@@ -43,4 +48,22 @@ class AddEspecialistaSerializer(serializers.ModelSerializer):
             'specialty',
             'date_birth',
             'description',
+        )
+
+
+class AddThemeSerializer(serializers.ModelSerializer):
+    """serializador para registrar nuevo tema"""
+
+    key_words = KeyWordsSerializer()
+    #category = CategorySerializer()
+
+    class Meta:
+        model = Theme
+        fields = (
+            'title',
+            'description',
+            'key_words',
+            #'category',
+            'content',
+            'publicado',
         )

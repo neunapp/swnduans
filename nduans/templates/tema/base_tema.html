@@ -5,6 +5,8 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/ng-editor/article.css' %}">
+
 {% endblock css %}
 
 {% block js %}
@@ -17,6 +19,9 @@
   <!-- Libreria de Terceros -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY-HZtj2t8617Gh_1NzzdTIK6TWCbLuss&libraries=places"></script>
   <script src="{% static 'js/angularjs/diretivas/vs-google-autocomplete.js' %}"></script>
+  <!-- ng-editor-->
+  <script src="{% static 'js/angularjs/diretivas/ng-editor/angular-file-upload.min.js' %}"></script>
+  <script src="{% static 'js/angularjs/diretivas/ng-editor/ngEditor.js' %}"></script>
 
   <!-- controladores base -->
   <script src="{% static 'angularApp/common/common.services.js' %}"></script>
@@ -28,4 +33,6 @@
     <!-- Controladores para aplicacion calificacion-->
     <script src="{% static 'angularApp/app/calificacion/calificar_tema.js' %}"></script>
     <script src="{% static 'angularApp/app/tema/especialista/especialista_addCtrl.js' %}"></script>
+    <script src="{% static 'angularApp/app/tema/especialista/list_temasCtrl.js' %}"></script>
+    <script src="{% static 'angularApp/app/tema/theme/add_tema.js' %}"></script>
 {% endblock js %}

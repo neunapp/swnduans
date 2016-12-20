@@ -1,0 +1,39 @@
+{% extends "tema/base_tema.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+  Nuevo Tema
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <ul>
+    <li>Perfil</li>
+    <li><a href="{% url 'tema_app:theme-list' %}">Redecatar</a></li>
+    <li>Buzon</li>
+    <li>Borrador</li>
+    <li>Estadisticas</li>
+    <li>Papelera</li>
+  </ul>
+  <div ng-app="DuansApp" ng-controller="TemaAddCtrl as self">
+    <h1 class="text-center">Nuevo Tema</h1>
+    Titulo:
+    <input type="text" ng-model="self.title" name="name" placeholder="ingrese titulo">
+    Descripcion:
+    <input type="text" ng-model="self.description" name="name" placeholder="descripcion del tema">
+    Palabras Clave:
+    <input type="text" ng-model="self.kword" name="name" placeholder="palabra clave">
+
+    <button type="button" ng-click="self.agregar_tema(true)"name="button">Guardar</button>
+    <button type="button" ng-click="self.agregar_tema(false)"name="button">Guardar y Publicar</button>
+
+    <div>
+      <ng-editor ng-model="doc.content" editor="editor"></ng-editor>
+    </div>
+
+  </div>
+
+  {% include "include/footer.html" %}
+
+{% endblock %}

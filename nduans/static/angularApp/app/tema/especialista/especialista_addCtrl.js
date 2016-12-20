@@ -46,6 +46,7 @@
           //creamos json para usuario
           var usuario = {
             'email':self.usuario.email,
+            'password':self.usuario.password,
             'first_name':self.usuario.first_name,
             'last_name':self.usuario.last_name,
             'phone':self.usuario.phone,

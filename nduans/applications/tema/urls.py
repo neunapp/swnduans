@@ -18,6 +18,16 @@ urlpatterns = [
         name='especialista-msj'
     ),
     url(
+        r'^tema/lista/$',
+        views.ThemeListView.as_view(),
+        name='theme-list'
+    ),
+    url(
+        r'^tema/nuevo/$',
+        views.ThemeAddView.as_view(),
+        name='theme-add'
+    ),
+    url(
         r'^(?P<category>[-\w]+)/(?P<slug>[-\w]+)/$',
         views.ThemeDetailView.as_view(),
         name='tema-detail'

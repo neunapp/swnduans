@@ -30,9 +30,16 @@ class LoginView(FormView):
         )
 
         if user is not None:
-            if user.is_active:
+            if user.is_active and user.type_user == '2':
                 login(self.request, user)
                 return HttpResponseRedirect('/')
+            elif user.is_active and user.type_user == '1':
+                login(self.request, user)
+                return HttpResponseRedirect(
+                    reverse(
+                        'users_app:panel_especialista'
+                    )
+                )
             else:
                 return HttpResponseRedirect(
                     reverse(
@@ -87,3 +94,7 @@ class UserRegisterView(CreateView):
                 )
 
         return super(UserRegisterView, self).form_valid(form)
+
+
+class PanelSpecialistView(TemplateView):
+    template_name = 'users/especialista/panel.html'

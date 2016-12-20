@@ -22,4 +22,9 @@ urlpatterns = [
         views.UserRegisterView.as_view(),
         name='registro'
     ),
+    url(
+        r'^panel/$',
+        views.PanelSpecialistView.as_view(),
+        name='panel_especialista'
+    ),
 ]
